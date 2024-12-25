@@ -1,0 +1,91 @@
+﻿@*NavMenu.razor*@
+
+@using MudBlazor
+@using TL
+@inject WTelegramService WT
+
+<div class="top-row ps-3 navbar navbar-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="">TL.Net</a>
+    </div>
+</div>
+
+<input type="checkbox" title="Navigation menu" class="navbar-toggler" />
+
+<div class="nav-scrollable" onclick="document.querySelector('.navbar-toggler').click()">
+    <nav class="flex-column">
+
+        @if (WT.User == null)
+        {
+            <p>Please complete the login first.</p>
+            <div class="nav-item px-3">
+                <NavLink class="nav-link" href="@($"/")">
+                    <span class="bi bi-plus-square-fill-nav-menu" aria-hidden="true"></span>Home
+                </NavLink>
+            </div>
+        }
+        else
+        {
+            @if (WT.Chats == null)
+            {
+                <MudText Typo="Typo.body1" Class="mud-theme-primary" Style="display:flex; justify-content:space-between;">
+                    Загрузка каналов/групп...
+                </MudText>
+            }
+            else
+            {
+                @foreach (var (id, chat) in WT.Chats.chats)
+                {
+                    switch (chat)
+                    {
+                        case Chat smallgroup when smallgroup.IsActive:
+                            <div class="nav-item px-3">
+                                <NavLink class="nav-link" href="@($"/chat/{id}")">
+                                    <MudText Style="display:flex; justify-content:space-between;">
+                                        <b>@smallgroup.title</b>&emsp;<i>@($"(minCh:{smallgroup.participants_count})")</i>
+                                    </MudText>
+                                </NavLink>
+                            </div>
+                            break;
+                        case Channel channel when channel.IsChannel:
+                            <div class="nav-item px-3">
+                                <NavLink class="nav-link" href="@($"/chat/{id}")">
+                                    <MudText Style="display:flex; justify-content:space-between;">
+                                        <b>@($"{channel.username}: {channel.title} ")</b>&emsp;<i>@($"(Ch:{channel.participants_count})")</i>
+                                    </MudText>
+                                </NavLink>
+                            </div>
+                            break;
+                        case Channel group: // no broadcast flag => it's a big group, also called supergroup or megagroup
+                            <div class="nav-item px-3">
+                                <NavLink class="nav-link" href="@($"/chat/{id}")">
+                                    <MudText Style="display:flex; justify-content:space-between;">
+                                        <b>@($"{group.username}: {group.title}")</b>&emsp;<i>@($"(Group)")</i>
+                                    </MudText>
+                                </NavLink>
+                            </div>
+                            break;
+                    }
+                }
+            }
+        }
+
+    </nav>
+</div>
+
+
+@code
+{
+    public Messages_Chats chats = null;
+    protected override async Task OnInitializedAsync()
+    {
+        await Task.Delay(5000);
+        if (WT.Chats == null)
+        {
+            //WT.Chats = await WT.Client.Messages_GetAllChats(); // chats = groups/channels (does not include users dialogs)
+        }
+
+    }
+}
+
+

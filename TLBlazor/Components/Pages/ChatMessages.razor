@@ -1,0 +1,72 @@
+﻿@*ChatMessages.razor*@
+
+@using TL
+
+@inject WTelegramService WT
+@inject NavigationManager Navigation
+
+@page "/chat/{id:long}"
+
+<h2>Messages from chat @id:</h2>
+
+@if (WT.User == null)
+{
+    <p>Вы не автроизованы.</p>
+}
+else
+{
+    @if (messages == null)
+    {
+        <p>Загрузка...</p>
+    }
+    else
+    {
+        <h5>messages.Count = @messages.Count</h5>
+        @foreach (var msg in messages.Messages)
+        {
+            <p>@msg.Date.ToString("yyyy-MM-dd HH:mm"): @GetMessageText(msg)</p>
+        }
+    }
+}
+
+@code {
+
+    [Parameter]
+    public long id { get; set; } = 0;
+
+    private Messages_MessagesBase messages;
+
+    protected override async Task OnParametersSetAsync()
+    {
+        if (WT.Chats != null && WT.Chats.chats.TryGetValue(id, out var chat))
+        {
+            InputPeer inputPeer;
+            if (chat is Channel channel)
+            {
+                inputPeer = new InputPeerChannel(channel.ID, channel.access_hash);
+            }
+            else
+            {
+                inputPeer = new InputPeerChat(chat.ID);
+            }
+
+            messages = await WT.Client.Messages_GetHistory(inputPeer, 20);
+            StateHasChanged();
+        }
+        else
+        {
+            messages = null;
+        }
+    }
+
+
+    private string GetMessageText(MessageBase msg)
+    {
+        return msg switch
+        {
+            Message message => message.message,
+            MessageService service => $"[Сервисное сообщение: {service.action}]",
+            _ => "[Unknown message type]"
+        };
+    }
+}

@@ -1,0 +1,70 @@
+﻿@*ChatMessages.razor*@
+
+@using TL
+
+@inject WTelegramService WT
+@inject NavigationManager Navigation
+
+@page "/chat/{id}"
+
+<h2>Messages from chat @id:</h2>
+
+@if (WT.User == null)
+{
+    <p>Please complete the login first.</p>
+}
+else
+{
+    @if (messages == null)
+    {
+        <p>Loading messages...</p>
+        
+        @code {
+            [Parameter]
+            public long id { get; set; }
+
+            private Messages_MessagesBase messages;
+
+            protected override async Task OnInitializedAsync()
+            {
+                var dialogs = await WT.Client.Messages_GetAllChats();
+                if (!dialogs.chats.TryGetValue(id, out var chat))
+                {
+                    messages = null;
+                    return;
+                }
+
+                InputPeer inputPeer;
+                if (chat is Channel channel)
+                {
+                    inputPeer = new InputPeerChannel(channel.ID, channel.access_hash);
+                }
+                else
+                {
+                    inputPeer = new InputPeerChat(chat.ID);
+                }
+
+                messages = await WT.Client.Messages_GetHistory(inputPeer, 20);
+            }
+        }
+    }
+    else
+    {
+        @foreach (var msg in messages.Messages)
+        {
+            <p>@msg.Date.ToString("yyyy-MM-dd HH:mm"): @GetMessageText(msg)</p>
+        }
+    }
+}
+
+@code {
+    private string GetMessageText(MessageBase msg)
+    {
+        return msg switch
+        {
+            Message message => message.message,
+            MessageService service => $"[Service message: {service.action}]",
+            _ => "[Unknown message type]"
+        };
+    }
+}

@@ -1,0 +1,38 @@
+﻿@*Chats.razor*@
+
+@page "/chats"
+
+@using TL
+
+@inject WTelegramService WT
+@inject NavigationManager Navigation
+
+<h2>Your chats and channels:</h2>
+
+@if (WT.User == null)
+{
+    <p>Please complete the login first.</p>
+}
+else
+{
+    @if (chats == null)
+    {
+        <p>Loading chats...</p>
+        @code
+        {
+            Messages_Chats chats = null;
+            protected override async Task OnInitializedAsync()
+            {
+                chats = await WT.Client.Messages_GetAllChats();
+            }
+        }
+    }
+    else
+    {
+        @foreach (var chat in chats.chats.Values.OfType<ChatBase>())
+        {
+            <a href="@($"/chat/{chat.ID}")">@chat.Title</a>
+            <br />
+        }
+    }
+}

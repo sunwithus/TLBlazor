@@ -1,0 +1,32 @@
+﻿@*ConnectionStatus.razor*@
+
+@using MudBlazor
+
+@inject WTelegramService WT
+@inject NavigationManager Navigation
+
+<MudText Typo="Typo.body1" Color="Color.Success">Статус подключения: &emsp;</MudText>
+
+@switch (WT.ConfigNeeded)
+{
+    case "connecting":
+        <MudText>Вход в Telegram...</MudText>
+        break;
+    case null:
+        <MudText>➠ @WT.User.first_name @WT.User.last_name</MudText>
+        break;
+    default:
+        <MudText>Введите код из смс @WT.ConfigNeeded: <input @bind="value" autofocus /></MudText>
+        <MudButton OnClick="SubmitConfig">Отправить</MudButton>
+        break;
+}
+
+@code {
+    private string value;
+
+    private async Task SubmitConfig()
+    {
+        await WT.DoLogin(value);
+        //Navigation.NavigateTo("/status", forceLoad: true);
+    }
+}
