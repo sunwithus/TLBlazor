@@ -48,3 +48,9 @@ Thumbs.db
 *.mov
 *.wmv
 
+# Ignore launchSettings.json, bin
+**/Properties/launchSettings.json
+TLBlazor/bin/
+TLBlazor/obj/
+TLBlazor/Properties/
+.vs/

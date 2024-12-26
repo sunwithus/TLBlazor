@@ -4,15 +4,16 @@
 использую библиотеку WTelegramClient
 нужно реализовать выгрузку собщений из групп/каналов и комментариев к этим сообщениям
 
+давай создадим страницу razor для отображения комментариев
+а на странице ChatMessages.razor сделай ссылку перед <hr /> для перехода на страницу комментариев
+
 
 NavMenu.razor - загружает список групп/каналов
 @*NavMenu.razor*@
 
 @using MudBlazor
 @using TL
-
 @inject WTelegramService WT
-
 
 <div class="top-row ps-3 navbar navbar-dark">
     <div class="container-fluid">
@@ -36,13 +37,15 @@ NavMenu.razor - загружает список групп/каналов
         }
         else
         {
-            @if (chats == null)
+            @if (WT.Chats == null)
             {
-                <p>Loading chats...</p>
+                <MudText Typo="Typo.body1" Class="mud-theme-primary" Style="display:flex; justify-content:space-between;">
+                    Загрузка каналов/групп...
+                </MudText>
             }
             else
             {
-                @foreach (var (id, chat) in chats.chats)
+                @foreach (var (id, chat) in WT.Chats.chats)
                 {
                     switch (chat)
                     {
@@ -87,11 +90,15 @@ NavMenu.razor - загружает список групп/каналов
     public Messages_Chats chats = null;
     protected override async Task OnInitializedAsync()
     {
-        await Task.Delay(100);
-        chats = await WT.Client.Messages_GetAllChats(); // chats = groups/channels (does not include users dialogs)
+        await Task.Delay(5000);
+        if (WT.Chats == null)
+        {
+            //WT.Chats = await WT.Client.Messages_GetAllChats(); // chats = groups/channels (does not include users dialogs)
+        }
 
     }
 }
+
 
 //Program.cs
 using TLBlazor.Components;
@@ -124,8 +131,8 @@ app.MapRazorComponents<App>()
 
 app.Run();
 
-WTelegramService.cs - служба для работы с библиотекой WTelegramClient
-//WTelegramService.cs 
+
+WTelegramService.cs - служба для работы с библиотекой WTelegramClient//WTelegramService.cs
 using TL;
 
 public class WTelegramService : BackgroundService
@@ -133,6 +140,7 @@ public class WTelegramService : BackgroundService
     public readonly WTelegram.Client Client;
     public User User => Client.User;
     public string ConfigNeeded { get; set; } = "connecting";
+    public Messages_Chats Chats { get; private set; }
 
     private readonly IConfiguration _config;
     private readonly ILogger<WTelegramService> _logger;
@@ -152,6 +160,7 @@ public class WTelegramService : BackgroundService
     protected override async Task ExecuteAsync(CancellationToken stoppingToken)
     {
         ConfigNeeded = await DoLogin(_config["phone_number"]);
+        Chats = await Client.Messages_GetAllChats();
     }
     public async Task<string> DoLogin(string loginInfo)
     {
@@ -162,6 +171,7 @@ public class WTelegramService : BackgroundService
 ChatMessages.razor - страница для выгрузки собщений от групп/каналов и комментариев к ним
 @*ChatMessages.razor*@
 
+@using MudBlazor
 @using TL
 
 @inject WTelegramService WT
@@ -169,33 +179,60 @@ ChatMessages.razor - страница для выгрузки собщений �
 
 @page "/chat/{id:long}"
 
-<h2>Messages from chat @id:</h2>
-
-@if (messages != null)
-{
-    <h5>messages.Count = @messages.Count</h5>
-}
-else
-{
-    <h5>messages is null</h5>
-}
+<h5>Данные с id => @id (@ChatName):</h5>
 
 @if (WT.User == null)
 {
-    <p>Please complete the login first.</p>
+    <p>Вы не автроизованы.</p>
 }
 else
 {
     @if (messages == null)
     {
-        <p>Loading messages...</p>
-
+        <p>Загрузка...</p>
     }
     else
     {
+        <MudText Color="Color.Warning" Typo="Typo.subtitle2">messages.Count = @messages.Count</MudText>
         @foreach (var msg in messages.Messages)
         {
-            <p>@msg.Date.ToString("yyyy-MM-dd HH:mm"): @GetMessageText(msg)</p>
+            <p style="white-space:pre-wrap">@msg.Date.ToString("yyyy-MM-dd HH:mm"): @GetMessageText(msg)
+                @if (msg is Message message)
+                {
+                    @if (message.media != null)
+                    {
+                        @switch (message.media)
+                        {
+                            case MessageMediaPhoto photo:
+                                <span> - Картинка (@photo.ToString())</span>
+                                break;
+                            case MessageMediaContact contact:
+                                <span> - Котнакт (@contact.ToString())</span>
+                                break;
+                            case MessageMediaDice sticker:
+                                <span> - Анимированный стикер (@sticker.ToString())</span>
+                                break;
+                            case MessageMediaGeo geo:
+                                <span> - Гео данные (@geo.ToString())</span>
+                                break;
+                            case MessageMediaWebPage webPage:
+                                <span> - Веб страница @webPage.ToString()</span>
+                                break;
+                            case MessageMediaStory story:
+                                <span> - Сторис @story.ToString()</span>
+                                break;
+                            case MessageMediaDocument doc:
+                                <span> - Видео или Документ (@doc.GetType())</span>
+                                break;
+                            default:
+                                <span> - Неизвестный тип медиафайла (@message.media.GetType())</span>
+                                break;
+                        }
+                    }
+                }
+
+            </p>
+            <hr />
         }
     }
 }
@@ -204,47 +241,49 @@ else
 
     [Parameter]
     public long id { get; set; } = 0;
+    private string ChatName = "";
 
     private Messages_MessagesBase messages;
 
-    protected override async Task OnInitializedAsync()
+    protected override async Task OnParametersSetAsync()
     {
-        var dialogs = await WT.Client.Messages_GetAllChats();
-
-        if (!dialogs.chats.TryGetValue(id, out var chat))
+        if (WT.Chats != null && WT.Chats.chats.TryGetValue(id, out var chat))
         {
-            messages = null;
-            return;
-        }
+            InputPeer inputPeer;
+            if (chat is Channel channel)
+            {
+                inputPeer = new InputPeerChannel(channel.ID, channel.access_hash);
+            }
+            else
+            {
+                inputPeer = new InputPeerChat(chat.ID);
+            }
+            ChatName = chat.Title;
 
-        InputPeer inputPeer;
-        if (chat is Channel channel)
-        {
-            inputPeer = new InputPeerChannel(channel.ID, channel.access_hash);
+            int offset = 0;
+
+            //https://corefork.telegram.org/methods messages.getHistory == Messages_GetHistory
+            //messages.getHistory#4423e6c5 peer:InputPeer offset_id:int offset_date:int add_offset:int limit:int max_id:int min_id:int hash:long = messages.Messages;
+            //peer, StartWithId, TillDate, SkipElements, LimitResult,
+            messages = await WT.Client.Messages_GetHistory(peer: inputPeer, offset_id: offset, add_offset: 0, limit: 50);
+            StateHasChanged();
         }
         else
         {
-            inputPeer = new InputPeerChat(chat.ID);
+            messages = null;
         }
-
-        messages = await WT.Client.Messages_GetHistory(inputPeer, 20);
     }
-
 
     private string GetMessageText(MessageBase msg)
     {
-        return msg switch
+        var text = msg switch
         {
             Message message => message.message,
-            MessageService service => $"[Service message: {service.action}]",
+            MessageService service => $"[Сервисное сообщение: {service.action}]",
             _ => "[Unknown message type]"
         };
+
+        return text;
     }
+
 }
-
-правильный ли подход для моего технического задания или лучше по другому?
-нужно убрать повторную загрузку var dialogs = await WT.Client.Messages_GetAllChats(), ведь в NavMenu.razor уже есть chats = await WT.Client.Messages_GetAllChats()
-сейчас при клике на ссылку с id другой группы обновления не происходит, надо чтоб загружались сообщения с другого id
-
-
-

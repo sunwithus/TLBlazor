@@ -3,16 +3,32 @@
   "WorkspaceRootPath": "C:\\dotnet\\TLBlazor\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A5D2FA17-B964-498B-BB6A-48D758518790}|TLBlazor\\TLBlazor.csproj|c:\\dotnet\\tlblazor\\tlblazor\\components\\pages\\chatmessages.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{A5D2FA17-B964-498B-BB6A-48D758518790}|TLBlazor\\TLBlazor.csproj|solutionrelative:tlblazor\\components\\pages\\chatmessages.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{A5D2FA17-B964-498B-BB6A-48D758518790}|TLBlazor\\TLBlazor.csproj|c:\\dotnet\\tlblazor\\tlblazor\\components\\_imports.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A5D2FA17-B964-498B-BB6A-48D758518790}|TLBlazor\\TLBlazor.csproj|solutionrelative:tlblazor\\components\\_imports.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A5D2FA17-B964-498B-BB6A-48D758518790}|TLBlazor\\TLBlazor.csproj|c:\\dotnet\\tlblazor\\tlblazor\\components\\layout\\navmenu.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{A5D2FA17-B964-498B-BB6A-48D758518790}|TLBlazor\\TLBlazor.csproj|solutionrelative:tlblazor\\components\\layout\\navmenu.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{A5D2FA17-B964-498B-BB6A-48D758518790}|TLBlazor\\TLBlazor.csproj|c:\\dotnet\\tlblazor\\tlblazor\\components\\pages\\messagecomments.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A5D2FA17-B964-498B-BB6A-48D758518790}|TLBlazor\\TLBlazor.csproj|solutionrelative:tlblazor\\components\\pages\\messagecomments.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A5D2FA17-B964-498B-BB6A-48D758518790}|TLBlazor\\TLBlazor.csproj|c:\\dotnet\\tlblazor\\tlblazor\\components\\modules\\connectionstatus.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A5D2FA17-B964-498B-BB6A-48D758518790}|TLBlazor\\TLBlazor.csproj|solutionrelative:tlblazor\\components\\modules\\connectionstatus.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A5D2FA17-B964-498B-BB6A-48D758518790}|TLBlazor\\TLBlazor.csproj|c:\\dotnet\\tlblazor\\tlblazor\\wtelegramservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A5D2FA17-B964-498B-BB6A-48D758518790}|TLBlazor\\TLBlazor.csproj|solutionrelative:tlblazor\\wtelegramservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A5D2FA17-B964-498B-BB6A-48D758518790}|TLBlazor\\TLBlazor.csproj|c:\\dotnet\\tlblazor\\tlblazor\\components\\pages\\chatmessages.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A5D2FA17-B964-498B-BB6A-48D758518790}|TLBlazor\\TLBlazor.csproj|solutionrelative:tlblazor\\components\\pages\\chatmessages.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A5D2FA17-B964-498B-BB6A-48D758518790}|TLBlazor\\TLBlazor.csproj|c:\\dotnet\\tlblazor\\tlblazor\\components\\app.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A5D2FA17-B964-498B-BB6A-48D758518790}|TLBlazor\\TLBlazor.csproj|solutionrelative:tlblazor\\components\\app.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A5D2FA17-B964-498B-BB6A-48D758518790}|TLBlazor\\TLBlazor.csproj|c:\\dotnet\\tlblazor\\tlblazor\\components\\pages\\home.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A5D2FA17-B964-498B-BB6A-48D758518790}|TLBlazor\\TLBlazor.csproj|solutionrelative:tlblazor\\components\\pages\\home.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,43 +38,95 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "NavMenu.razor",
-              "DocumentMoniker": "C:\\dotnet\\TLBlazor\\TLBlazor\\Components\\Layout\\NavMenu.razor",
-              "RelativeDocumentMoniker": "TLBlazor\\Components\\Layout\\NavMenu.razor",
-              "ToolTip": "C:\\dotnet\\TLBlazor\\TLBlazor\\Components\\Layout\\NavMenu.razor",
-              "RelativeToolTip": "TLBlazor\\Components\\Layout\\NavMenu.razor",
-              "ViewState": "AgIAABEAAAAAAAAAAAAAAB4AAABFAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "_Imports.razor",
+              "DocumentMoniker": "C:\\dotnet\\TLBlazor\\TLBlazor\\Components\\_Imports.razor",
+              "RelativeDocumentMoniker": "TLBlazor\\Components\\_Imports.razor",
+              "ToolTip": "C:\\dotnet\\TLBlazor\\TLBlazor\\Components\\_Imports.razor",
+              "RelativeToolTip": "TLBlazor\\Components\\_Imports.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-12-25T04:57:28.308Z",
+              "WhenOpened": "2024-12-26T05:05:58.567Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "App.razor",
+              "DocumentMoniker": "C:\\dotnet\\TLBlazor\\TLBlazor\\Components\\App.razor",
+              "RelativeDocumentMoniker": "TLBlazor\\Components\\App.razor",
+              "ToolTip": "C:\\dotnet\\TLBlazor\\TLBlazor\\Components\\App.razor",
+              "RelativeToolTip": "TLBlazor\\Components\\App.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-26T05:01:56.329Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MessageComments.razor",
+              "DocumentMoniker": "C:\\dotnet\\TLBlazor\\TLBlazor\\Components\\Pages\\MessageComments.razor",
+              "RelativeDocumentMoniker": "TLBlazor\\Components\\Pages\\MessageComments.razor",
+              "ToolTip": "C:\\dotnet\\TLBlazor\\TLBlazor\\Components\\Pages\\MessageComments.razor",
+              "RelativeToolTip": "TLBlazor\\Components\\Pages\\MessageComments.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-26T03:46:06.87Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Home.razor",
+              "DocumentMoniker": "C:\\dotnet\\TLBlazor\\TLBlazor\\Components\\Pages\\Home.razor",
+              "RelativeDocumentMoniker": "TLBlazor\\Components\\Pages\\Home.razor",
+              "ToolTip": "C:\\dotnet\\TLBlazor\\TLBlazor\\Components\\Pages\\Home.razor",
+              "RelativeToolTip": "TLBlazor\\Components\\Pages\\Home.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-26T02:37:17.023Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
+              "Title": "ConnectionStatus.razor",
+              "DocumentMoniker": "C:\\dotnet\\TLBlazor\\TLBlazor\\Components\\Modules\\ConnectionStatus.razor",
+              "RelativeDocumentMoniker": "TLBlazor\\Components\\Modules\\ConnectionStatus.razor",
+              "ToolTip": "C:\\dotnet\\TLBlazor\\TLBlazor\\Components\\Modules\\ConnectionStatus.razor",
+              "RelativeToolTip": "TLBlazor\\Components\\Modules\\ConnectionStatus.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-26T02:36:22.921Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "WTelegramService.cs",
               "DocumentMoniker": "C:\\dotnet\\TLBlazor\\TLBlazor\\WTelegramService.cs",
               "RelativeDocumentMoniker": "TLBlazor\\WTelegramService.cs",
               "ToolTip": "C:\\dotnet\\TLBlazor\\TLBlazor\\WTelegramService.cs",
               "RelativeToolTip": "TLBlazor\\WTelegramService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAfAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-25T04:48:36.404Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 4,
               "Title": "ChatMessages.razor",
               "DocumentMoniker": "C:\\dotnet\\TLBlazor\\TLBlazor\\Components\\Pages\\ChatMessages.razor",
               "RelativeDocumentMoniker": "TLBlazor\\Components\\Pages\\ChatMessages.razor",
               "ToolTip": "C:\\dotnet\\TLBlazor\\TLBlazor\\Components\\Pages\\ChatMessages.razor",
               "RelativeToolTip": "TLBlazor\\Components\\Pages\\ChatMessages.razor",
-              "ViewState": "AgIAACEAAAAAAAAAAAAAADEAAAAIAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-12-24T05:48:03.741Z",
               "EditorCaption": ""
