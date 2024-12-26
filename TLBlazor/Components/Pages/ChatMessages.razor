@@ -1,5 +1,6 @@
 ﻿@*ChatMessages.razor*@
 
+@using MudBlazor
 @using TL
 
 @inject WTelegramService WT
@@ -7,7 +8,7 @@
 
 @page "/chat/{id:long}"
 
-<h2>Messages from chat @id:</h2>
+<h5>Данные с id => @id (@ChatName):</h5>
 
 @if (WT.User == null)
 {
@@ -21,10 +22,46 @@ else
     }
     else
     {
-        <h5>messages.Count = @messages.Count</h5>
+        <MudText Typo="Typo.caption" Color="Color.Primary">messages.Count = @messages.Count</MudText><hr />
         @foreach (var msg in messages.Messages)
         {
-            <p>@msg.Date.ToString("yyyy-MM-dd HH:mm"): @GetMessageText(msg)</p>
+            <p style="white-space:pre-wrap">@msg.Date.ToString("yyyy-MM-dd HH:mm"): @GetMessageText(msg)
+                @if (msg is Message message)
+                {
+                    @if (message.media != null)
+                    {
+                        @switch (message.media)
+                        {
+                            case MessageMediaPhoto photo:
+                                <span> - Картинка (@photo.ToString())</span>
+                                break;
+                            case MessageMediaContact contact:
+                                <span> - Котнакт (@contact.ToString())</span>
+                                break;
+                            case MessageMediaDice sticker:
+                                <span> - Анимированный стикер (@sticker.ToString())</span>
+                                break;
+                            case MessageMediaGeo geo:
+                                <span> - Гео данные (@geo.ToString())</span>
+                                break;
+                            case MessageMediaWebPage webPage:
+                                <span> - Веб страница @webPage.ToString()</span>
+                                break;
+                            case MessageMediaStory story:
+                                <span> - Сторис @story.ToString()</span>
+                                break;
+                            case MessageMediaDocument doc:
+                                <span> - Видео или Документ (@doc.GetType())</span>
+                                break;
+                            default:
+                                <span> - Неизвестный тип медиафайла (@message.media.GetType())</span>
+                                break;
+                        }
+                    }
+                }
+                <br /><NavLink href="@($"/chat/{id}/comments?messageid={msg.ID}")"><MudText Typo="Typo.caption" Color="Color.Info">Просмотреть комментарии</MudText></NavLink>
+            </p>
+            <MudDivider />
         }
     }
 }
@@ -33,6 +70,7 @@ else
 
     [Parameter]
     public long id { get; set; } = 0;
+    private string ChatName = "";
 
     private Messages_MessagesBase messages;
 
@@ -49,8 +87,14 @@ else
             {
                 inputPeer = new InputPeerChat(chat.ID);
             }
+            ChatName = chat.Title;
 
-            messages = await WT.Client.Messages_GetHistory(inputPeer, 20);
+            int offset = 0;
+
+            //https://corefork.telegram.org/methods messages.getHistory == Messages_GetHistory
+            //messages.getHistory#4423e6c5 peer:InputPeer offset_id:int offset_date:int add_offset:int limit:int max_id:int min_id:int hash:long = messages.Messages;
+            //peer, StartWithId, TillDate, SkipElements, LimitResult,
+            messages = await WT.Client.Messages_GetHistory(peer: inputPeer, offset_id: offset, add_offset: 0, limit: 50);
             StateHasChanged();
         }
         else
@@ -59,14 +103,16 @@ else
         }
     }
 
-
     private string GetMessageText(MessageBase msg)
     {
-        return msg switch
+        var text = msg switch
         {
             Message message => message.message,
             MessageService service => $"[Сервисное сообщение: {service.action}]",
             _ => "[Unknown message type]"
         };
+
+        return text;
     }
+
 }

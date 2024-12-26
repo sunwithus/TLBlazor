@@ -1,0 +1,111 @@
+﻿@*MessageComments.razor*@
+
+@using TL
+
+@inject WTelegramService WT
+@inject NavigationManager Navigation
+
+@page "/chat/{id:long}/comments"
+
+<h5>Комментарии к сообщению с id => @messageId в чате @id (@ChatName):</h5>
+<NavLink href="@($"/chat/{id}")"><MudText Typo="Typo.body2" Color="Color.Info">Назад</MudText></NavLink><MudDivider />
+
+@if (WT.User == null)
+{
+    <p>Вы не авторизованы.</p>
+}
+else
+{
+    @if (comments == null && !IsCommentsLoaded)
+    {
+        <p>Загрузка...</p>
+    }
+    else if (comments == null && IsCommentsLoaded)
+    {
+        <p>Комментариев нет</p>
+    }
+    else if (comments != null)
+    {
+        @foreach (var comment in comments.Messages)
+        {
+            <p style="white-space:pre-wrap">@comment.Date.ToString("yyyy-MM-dd HH:mm"): @GetCommentText(comment)</p>
+            <hr />
+        }
+    }
+}
+
+@code {
+
+    [Parameter]
+    public long id { get; set; } = 0;
+    [Parameter]
+    [SupplyParameterFromQuery] 
+    public int messageId { get; set; } = 0;
+    private string ChatName = "";
+
+    private bool IsCommentsLoaded = false;
+
+    private Messages_MessagesBase comments;
+
+    protected override async Task OnParametersSetAsync()
+    {
+        if (WT.Chats != null && WT.Chats.chats.TryGetValue(id, out var chat))
+        {
+            IsCommentsLoaded = false;
+
+            InputPeer inputPeer;
+            if (chat is Channel channel)
+            {
+                inputPeer = new InputPeerChannel(channel.ID, channel.access_hash);
+            }
+            else
+            {
+                inputPeer = new InputPeerChat(chat.ID);
+            }
+            ChatName = chat.Title;
+
+            // Load comments for the specific message
+            try 
+            {
+                var result = await WT.Client.Messages_GetReplies(peer: inputPeer, msg_id: messageId, offset_id: 0, add_offset: 0, limit: 50);
+                comments = result;
+            }
+            catch (TL.RpcException ex)
+            {
+                Console.WriteLine("TL Err: " + ex.Message);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("General Err: " + ex.Message);
+            }
+            finally
+            {
+                IsCommentsLoaded = true;
+            }
+
+            StateHasChanged();
+        }
+        else
+        {
+            comments = null;
+            IsCommentsLoaded = true;
+        }
+    }
+
+    private string GetCommentText(MessageBase msg)
+    {
+        var text = msg switch
+        {
+            Message message => message.message,
+            MessageService service => $"[Сервисное сообщение: {service.action}]",
+            _ => "[Unknown message type]"
+        };
+
+        return text;
+    }
+
+    private void NavigateToChat()
+    {
+        Navigation.NavigateTo($"/chat/{id}");
+    }
+}

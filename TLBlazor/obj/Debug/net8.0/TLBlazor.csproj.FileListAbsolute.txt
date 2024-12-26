@@ -48,3 +48,4 @@ C:\dotnet\TLBlazor\TLBlazor\bin\Debug\net8.0\Microsoft.Extensions.Logging.Abstra
 C:\dotnet\TLBlazor\TLBlazor\bin\Debug\net8.0\Microsoft.Extensions.Options.dll
 C:\dotnet\TLBlazor\TLBlazor\bin\Debug\net8.0\Microsoft.JSInterop.dll
 C:\dotnet\TLBlazor\TLBlazor\bin\Debug\net8.0\MudBlazor.dll
+C:\dotnet\TLBlazor\TLBlazor\obj\Debug\net8.0\TLBlazor.sourcelink.json

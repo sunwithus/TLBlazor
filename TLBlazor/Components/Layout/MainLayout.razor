@@ -10,7 +10,6 @@
         <div class="top-row px-4">
             <ConnectionStatus />
         </div>
-
         <article class="content px-4">
             @Body
         </article>
@@ -22,3 +21,13 @@
     <a href="" class="reload">Reload</a>
     <a class="dismiss">🗙</a>
 </div>
+
+@* Required *@
+<MudThemeProvider />
+<MudPopoverProvider />
+
+@* Needed for dialogs *@
+<MudDialogProvider />
+
+@* Needed for snackbars *@
+<MudSnackbarProvider />

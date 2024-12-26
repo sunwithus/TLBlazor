@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "itAH8f6cT1P1XTetB9HQrOZmzLfV4zwkqG343vqKtZI=",
+  "Hash": "/1OWr9LPmw1hwruuAgEuDFkhN+LNfbDlGn5LqYeZQqk=",
   "Source": "TLBlazor",
   "BasePath": "_content/TLBlazor",
   "Mode": "Default",
@@ -31,8 +31,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "ScopedCss",
       "AssetTraitValue": "ApplicationBundle",
-      "Fingerprint": "0m51rh9t18",
-      "Integrity": "WH6gYD35dh2Fw4U5TAHVlbBfGs4CrktjNdN2oL7NBTY=",
+      "Fingerprint": "k2sfwozlio",
+      "Integrity": "3CtLoVUmme5v8ureB0sBICCKXa3ol41OWFJWnCMJ42U=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\dotnet\\TLBlazor\\TLBlazor\\obj\\Debug\\net8.0\\scopedcss\\bundle\\TLBlazor.styles.css"
@@ -52,8 +52,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "ScopedCss",
       "AssetTraitValue": "ProjectBundle",
-      "Fingerprint": "0m51rh9t18",
-      "Integrity": "WH6gYD35dh2Fw4U5TAHVlbBfGs4CrktjNdN2oL7NBTY=",
+      "Fingerprint": "k2sfwozlio",
+      "Integrity": "3CtLoVUmme5v8ureB0sBICCKXa3ol41OWFJWnCMJ42U=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\dotnet\\TLBlazor\\TLBlazor\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\TLBlazor.bundle.scp.css"
@@ -73,8 +73,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "1fr23dru8v",
-      "Integrity": "TV5/MRyNSNgQfdEiHlQGAjGVv3I2vu0VP/UqVy/oVJA=",
+      "Fingerprint": "xh8fwjzgp6",
+      "Integrity": "O6siOo+5YpGYQtPoKDa9QhX1r+in9PuMEZcVxF12Iic=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\app.css"
@@ -94,8 +94,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "bpk8xqwxhs",
-      "Integrity": "z8OR40MowJ8GgK6P89Y+hiJK5+cclzFHzLhFQLL92bg=",
+      "Fingerprint": "6gzpyzhau4",
+      "Integrity": "SiIVMGgRhdXjKSTIddX7mh9IbOXVcwQWc7/p4nS6D/0=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\bootstrap\\bootstrap.min.css"
@@ -143,10 +143,10 @@
       "OriginalItemSpec": "wwwroot\\favicon.png"
     },
     {
-      "Identity": "C:\\Users\\sharp\\.nuget\\packages\\mudblazor\\7.15.0\\staticwebassets\\MudBlazor.min.css",
+      "Identity": "C:\\Users\\swu\\.nuget\\packages\\mudblazor\\7.15.0\\staticwebassets\\MudBlazor.min.css",
       "SourceId": "MudBlazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\sharp\\.nuget\\packages\\mudblazor\\7.15.0\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\swu\\.nuget\\packages\\mudblazor\\7.15.0\\staticwebassets\\",
       "BasePath": "_content/MudBlazor",
       "RelativePath": "MudBlazor.min.css",
       "AssetKind": "All",
@@ -161,13 +161,13 @@
       "Integrity": "2gItJ0j/o5RSWg7VYqCOBpSPI1dxTOG+mnEzWt7EvYw=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\sharp\\.nuget\\packages\\mudblazor\\7.15.0\\staticwebassets\\MudBlazor.min.css"
+      "OriginalItemSpec": "C:\\Users\\swu\\.nuget\\packages\\mudblazor\\7.15.0\\staticwebassets\\MudBlazor.min.css"
     },
     {
-      "Identity": "C:\\Users\\sharp\\.nuget\\packages\\mudblazor\\7.15.0\\staticwebassets\\MudBlazor.min.js",
+      "Identity": "C:\\Users\\swu\\.nuget\\packages\\mudblazor\\7.15.0\\staticwebassets\\MudBlazor.min.js",
       "SourceId": "MudBlazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\sharp\\.nuget\\packages\\mudblazor\\7.15.0\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\swu\\.nuget\\packages\\mudblazor\\7.15.0\\staticwebassets\\",
       "BasePath": "_content/MudBlazor",
       "RelativePath": "MudBlazor.min.js",
       "AssetKind": "All",
@@ -182,13 +182,13 @@
       "Integrity": "lz0Xidl9yw53lEeYs4XMU39zSRQzpCIyWOQSAG0/0GU=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\sharp\\.nuget\\packages\\mudblazor\\7.15.0\\staticwebassets\\MudBlazor.min.js"
+      "OriginalItemSpec": "C:\\Users\\swu\\.nuget\\packages\\mudblazor\\7.15.0\\staticwebassets\\MudBlazor.min.js"
     }
   ],
   "Endpoints": [
     {
       "Route": "_content/MudBlazor/MudBlazor.min.css",
-      "AssetFile": "C:\\Users\\sharp\\.nuget\\packages\\mudblazor\\7.15.0\\staticwebassets\\MudBlazor.min.css",
+      "AssetFile": "C:\\Users\\swu\\.nuget\\packages\\mudblazor\\7.15.0\\staticwebassets\\MudBlazor.min.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -225,7 +225,7 @@
     },
     {
       "Route": "_content/MudBlazor/MudBlazor.min.js",
-      "AssetFile": "C:\\Users\\sharp\\.nuget\\packages\\mudblazor\\7.15.0\\staticwebassets\\MudBlazor.min.js",
+      "AssetFile": "C:\\Users\\swu\\.nuget\\packages\\mudblazor\\7.15.0\\staticwebassets\\MudBlazor.min.js",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -261,51 +261,6 @@
       ]
     },
     {
-      "Route": "app.1fr23dru8v.css",
-      "AssetFile": "C:\\dotnet\\TLBlazor\\TLBlazor\\wwwroot\\app.css",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "2783"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"TV5/MRyNSNgQfdEiHlQGAjGVv3I2vu0VP/UqVy/oVJA=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Wed, 25 Dec 2024 02:32:39 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "1fr23dru8v"
-        },
-        {
-          "Name": "label",
-          "Value": "app.css"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-TV5/MRyNSNgQfdEiHlQGAjGVv3I2vu0VP/UqVy/oVJA="
-        }
-      ]
-    },
-    {
       "Route": "app.css",
       "AssetFile": "C:\\dotnet\\TLBlazor\\TLBlazor\\wwwroot\\app.css",
       "Selectors": [],
@@ -316,7 +271,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "2783"
+          "Value": "2856"
         },
         {
           "Name": "Content-Type",
@@ -324,11 +279,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"TV5/MRyNSNgQfdEiHlQGAjGVv3I2vu0VP/UqVy/oVJA=\""
+          "Value": "\"O6siOo+5YpGYQtPoKDa9QhX1r+in9PuMEZcVxF12Iic=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 25 Dec 2024 02:32:39 GMT"
+          "Value": "Thu, 26 Dec 2024 02:54:17 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -338,13 +293,13 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-TV5/MRyNSNgQfdEiHlQGAjGVv3I2vu0VP/UqVy/oVJA="
+          "Value": "sha256-O6siOo+5YpGYQtPoKDa9QhX1r+in9PuMEZcVxF12Iic="
         }
       ]
     },
     {
-      "Route": "bootstrap/bootstrap.min.bpk8xqwxhs.css",
-      "AssetFile": "C:\\dotnet\\TLBlazor\\TLBlazor\\wwwroot\\bootstrap\\bootstrap.min.css",
+      "Route": "app.xh8fwjzgp6.css",
+      "AssetFile": "C:\\dotnet\\TLBlazor\\TLBlazor\\wwwroot\\app.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -353,7 +308,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "162720"
+          "Value": "2856"
         },
         {
           "Name": "Content-Type",
@@ -361,11 +316,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"z8OR40MowJ8GgK6P89Y+hiJK5+cclzFHzLhFQLL92bg=\""
+          "Value": "\"O6siOo+5YpGYQtPoKDa9QhX1r+in9PuMEZcVxF12Iic=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 24 Dec 2024 05:12:05 GMT"
+          "Value": "Thu, 26 Dec 2024 02:54:17 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -375,7 +330,52 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "bpk8xqwxhs"
+          "Value": "xh8fwjzgp6"
+        },
+        {
+          "Name": "label",
+          "Value": "app.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-O6siOo+5YpGYQtPoKDa9QhX1r+in9PuMEZcVxF12Iic="
+        }
+      ]
+    },
+    {
+      "Route": "bootstrap/bootstrap.min.6gzpyzhau4.css",
+      "AssetFile": "C:\\dotnet\\TLBlazor\\TLBlazor\\wwwroot\\bootstrap\\bootstrap.min.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "162726"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"SiIVMGgRhdXjKSTIddX7mh9IbOXVcwQWc7/p4nS6D/0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 25 Dec 2024 10:54:29 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "6gzpyzhau4"
         },
         {
           "Name": "label",
@@ -383,7 +383,7 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-z8OR40MowJ8GgK6P89Y+hiJK5+cclzFHzLhFQLL92bg="
+          "Value": "sha256-SiIVMGgRhdXjKSTIddX7mh9IbOXVcwQWc7/p4nS6D/0="
         }
       ]
     },
@@ -398,7 +398,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "162720"
+          "Value": "162726"
         },
         {
           "Name": "Content-Type",
@@ -406,11 +406,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"z8OR40MowJ8GgK6P89Y+hiJK5+cclzFHzLhFQLL92bg=\""
+          "Value": "\"SiIVMGgRhdXjKSTIddX7mh9IbOXVcwQWc7/p4nS6D/0=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 24 Dec 2024 05:12:05 GMT"
+          "Value": "Wed, 25 Dec 2024 10:54:29 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -420,7 +420,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-z8OR40MowJ8GgK6P89Y+hiJK5+cclzFHzLhFQLL92bg="
+          "Value": "sha256-SiIVMGgRhdXjKSTIddX7mh9IbOXVcwQWc7/p4nS6D/0="
         }
       ]
     },
@@ -447,7 +447,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 24 Dec 2024 05:12:05 GMT"
+          "Value": "Wed, 25 Dec 2024 10:54:29 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -492,7 +492,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 24 Dec 2024 05:12:05 GMT"
+          "Value": "Wed, 25 Dec 2024 10:54:29 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -529,7 +529,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 24 Dec 2024 05:12:05 GMT"
+          "Value": "Wed, 25 Dec 2024 10:54:29 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -574,7 +574,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 24 Dec 2024 05:12:05 GMT"
+          "Value": "Wed, 25 Dec 2024 10:54:29 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -589,96 +589,6 @@
       ]
     },
     {
-      "Route": "TLBlazor.0m51rh9t18.bundle.scp.css",
-      "AssetFile": "C:\\dotnet\\TLBlazor\\TLBlazor\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\TLBlazor.bundle.scp.css",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "5824"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"WH6gYD35dh2Fw4U5TAHVlbBfGs4CrktjNdN2oL7NBTY=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Wed, 25 Dec 2024 02:32:23 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "0m51rh9t18"
-        },
-        {
-          "Name": "label",
-          "Value": "TLBlazor.bundle.scp.css"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-WH6gYD35dh2Fw4U5TAHVlbBfGs4CrktjNdN2oL7NBTY="
-        }
-      ]
-    },
-    {
-      "Route": "TLBlazor.0m51rh9t18.styles.css",
-      "AssetFile": "C:\\dotnet\\TLBlazor\\TLBlazor\\obj\\Debug\\net8.0\\scopedcss\\bundle\\TLBlazor.styles.css",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "5824"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"WH6gYD35dh2Fw4U5TAHVlbBfGs4CrktjNdN2oL7NBTY=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Wed, 25 Dec 2024 02:32:23 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "0m51rh9t18"
-        },
-        {
-          "Name": "label",
-          "Value": "TLBlazor.styles.css"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-WH6gYD35dh2Fw4U5TAHVlbBfGs4CrktjNdN2oL7NBTY="
-        }
-      ]
-    },
-    {
       "Route": "TLBlazor.bundle.scp.css",
       "AssetFile": "C:\\dotnet\\TLBlazor\\TLBlazor\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\TLBlazor.bundle.scp.css",
       "Selectors": [],
@@ -689,7 +599,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "5824"
+          "Value": "5852"
         },
         {
           "Name": "Content-Type",
@@ -697,11 +607,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"WH6gYD35dh2Fw4U5TAHVlbBfGs4CrktjNdN2oL7NBTY=\""
+          "Value": "\"3CtLoVUmme5v8ureB0sBICCKXa3ol41OWFJWnCMJ42U=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 25 Dec 2024 02:32:23 GMT"
+          "Value": "Thu, 26 Dec 2024 02:29:50 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -711,7 +621,97 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-WH6gYD35dh2Fw4U5TAHVlbBfGs4CrktjNdN2oL7NBTY="
+          "Value": "sha256-3CtLoVUmme5v8ureB0sBICCKXa3ol41OWFJWnCMJ42U="
+        }
+      ]
+    },
+    {
+      "Route": "TLBlazor.k2sfwozlio.bundle.scp.css",
+      "AssetFile": "C:\\dotnet\\TLBlazor\\TLBlazor\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\TLBlazor.bundle.scp.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "5852"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"3CtLoVUmme5v8ureB0sBICCKXa3ol41OWFJWnCMJ42U=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 26 Dec 2024 02:29:50 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "k2sfwozlio"
+        },
+        {
+          "Name": "label",
+          "Value": "TLBlazor.bundle.scp.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-3CtLoVUmme5v8ureB0sBICCKXa3ol41OWFJWnCMJ42U="
+        }
+      ]
+    },
+    {
+      "Route": "TLBlazor.k2sfwozlio.styles.css",
+      "AssetFile": "C:\\dotnet\\TLBlazor\\TLBlazor\\obj\\Debug\\net8.0\\scopedcss\\bundle\\TLBlazor.styles.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "5852"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"3CtLoVUmme5v8ureB0sBICCKXa3ol41OWFJWnCMJ42U=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 26 Dec 2024 02:29:50 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "k2sfwozlio"
+        },
+        {
+          "Name": "label",
+          "Value": "TLBlazor.styles.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-3CtLoVUmme5v8ureB0sBICCKXa3ol41OWFJWnCMJ42U="
         }
       ]
     },
@@ -726,7 +726,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "5824"
+          "Value": "5852"
         },
         {
           "Name": "Content-Type",
@@ -734,11 +734,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"WH6gYD35dh2Fw4U5TAHVlbBfGs4CrktjNdN2oL7NBTY=\""
+          "Value": "\"3CtLoVUmme5v8ureB0sBICCKXa3ol41OWFJWnCMJ42U=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 25 Dec 2024 02:32:23 GMT"
+          "Value": "Thu, 26 Dec 2024 02:29:50 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -748,7 +748,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-WH6gYD35dh2Fw4U5TAHVlbBfGs4CrktjNdN2oL7NBTY="
+          "Value": "sha256-3CtLoVUmme5v8ureB0sBICCKXa3ol41OWFJWnCMJ42U="
         }
       ]
     }

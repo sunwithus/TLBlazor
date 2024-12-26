@@ -1,5 +1,6 @@
 //Program.cs
 using TLBlazor.Components;
+using MudBlazor.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -7,6 +8,7 @@ builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents();
 builder.Services.AddSingleton<WTelegramService>();
 builder.Services.AddHostedService(provider => provider.GetService<WTelegramService>());
+builder.Services.AddMudServices();
 
 var app = builder.Build();
 
